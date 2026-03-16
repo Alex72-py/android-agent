@@ -82,7 +82,8 @@ class GeminiApiClient(context: Context) {
         val trimmed = elements.take(12).joinToString("\n") {
             "text=${it.text}, cd=${it.contentDescription}, id=${it.resourceId}, bounds=[${it.left},${it.top},${it.right},${it.bottom}]"
         }
-        val screenshotHint = Base64.encodeToString(screenshot.take(1200).toByteArray(), Base64.NO_WRAP)
+        val head = screenshot.copyOfRange(0, minOf(screenshot.size, 1200))
+        val screenshotHint = Base64.encodeToString(head, Base64.NO_WRAP)
         return """
 You are a planner only. Never execute actions.
 Goal: $goal
