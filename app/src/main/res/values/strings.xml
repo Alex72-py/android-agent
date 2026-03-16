@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI Agent</string>
+    <string name="accessibility_service_desc">Executes local UI actions for AI Agent automation.</string>
+    <string name="notification_channel_name">AI Agent Service</string>
+    <string name="notification_text">AI Agent is running in foreground mode.</string>
+</resources>
